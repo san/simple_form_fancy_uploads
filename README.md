@@ -1,4 +1,4 @@
-# Added Functionality In This Branch 
+# Added Functionality In This Fork 
 
 This is a pretty useful little gem. Thanks to @apeacox.
 I added a couple of extra options that you can pass to `:image_preview` input. 
@@ -17,6 +17,14 @@ Here is a basic example (copied and modified from below).
   <%= f.input :some_image_field, as: :image_preview, input_html: {preview_version: :thumb}, link_to_original: :true, preview_html: {class: :some_class, target: '_blank'} %>
 
 <% end %>
+```
+
+### Install
+
+To use this fork, add following to your `Gemfile` and run `bundle install`.
+
+```
+gem 'simple_form_fancy_uploads', :github => 'san/simple_form_fancy_uploads'
 ```
 
 # SimpleForm fancy uploads
