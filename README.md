@@ -1,3 +1,24 @@
+# Added Functionality In This Branch 
+
+This is a pretty useful little gem. Thanks to @apeacox.
+I added a couple of extra options that you can pass to `:image_preview` input. 
+
+* `:link_to_original` : Accepts `true` or `false`. When set to true, it will wrap the `image` tag by a `link` tag and will link to original version of the image. This is useful when you are displaying a smaller version of the image and need the ability to see the full size image.
+* `:preview_html` : Accepts html options and adds them to the `link_tag` (when `:link_to_original` is `true`) or to the `image_tag` (when `:link_to_original` is `false`). Useful to add a `class` or `id` for styling purposes.
+
+### Example Usage
+
+Here is a basic example (copied and modified from below).
+
+```
+<%= simple_form_for @some_model do |f| %>
+  <!-- we specify that this is an image form upload input, and we want to show the 'thumb' version
+  of the carrierwave upload to not break our layout with a non-resized image -->
+  <%= f.input :some_image_field, as: :image_preview, input_html: {preview_version: :thumb}, link_to_original: :true, preview_html: {class: :some_class, target: '_blank'} %>
+
+<% end %>
+```
+
 # SimpleForm fancy uploads
 
 A set of [simple_form](https://github.com/plataformatec/simple_form) (>= v2.0) custom inputs to get image previews or a link to
